@@ -52,4 +52,3 @@ You can use it everywhere you want and render like you want
 ```bash
 {% include "@ArobasesSyliusInstagramPlugin/Instagram/_instagram.html.twig" with {'data' : app_get_instagram_feed() } %}
 ```
-### To test it 
