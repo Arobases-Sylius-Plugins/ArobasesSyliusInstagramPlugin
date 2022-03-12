@@ -1,7 +1,7 @@
 {
     "name": "arobases-sylius-public/sylius-instagram-plugin",
     "type": "sylius-plugin",
-    "description": "Acme example plugin for Sylius.",
+    "description": "Provide Instagram Feed on Sylius",
     "keywords": [
         "sylius",
         "sylius-plugin",
