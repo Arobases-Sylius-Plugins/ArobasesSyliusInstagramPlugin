@@ -15,7 +15,7 @@ final class ChannelTypeExtension extends AbstractTypeExtension
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->add('instagramToken', TextType::class, [
-            'label' => 'arobases.ui.instagramToken',
+            'label' => 'Instagram Token',
         ]);
     }
 

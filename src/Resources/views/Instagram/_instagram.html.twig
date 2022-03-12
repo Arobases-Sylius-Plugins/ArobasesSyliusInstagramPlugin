@@ -1,0 +1,14 @@
+<div class="ui three column doubling grid container">
+    {% for key, post in data %}
+        {% if data[key]["media_url"] is defined %}
+            {% set media_url = data[key]["media_url"] %}
+            <div class="column">
+                <div class="ui segment">
+                    <a class="ui medium image">
+                        <img src="{{ media_url }}">
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
