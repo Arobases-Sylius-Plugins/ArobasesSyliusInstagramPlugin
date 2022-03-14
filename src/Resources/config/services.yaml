@@ -7,6 +7,9 @@ services:
   Arobases\SyliusInstagramPlugin\Twig\:
     resource: '../../Twig'
 
+
+
+
   Arobases\SyliusInstagramPlugin\Form\Extension\ChannelTypeExtension:
     tags:
       - { name: form.type_extension, extended_type: Sylius\Bundle\ChannelBundle\Form\Type\ChannelType }
