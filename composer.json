@@ -1,5 +1,5 @@
 {
-    "name": "arobases-sylius-public/sylius-instagram-plugin",
+    "name": "arobases/sylius-instagram-plugin",
     "type": "sylius-plugin",
     "description": "Provide Instagram Feed on Sylius",
     "keywords": [
