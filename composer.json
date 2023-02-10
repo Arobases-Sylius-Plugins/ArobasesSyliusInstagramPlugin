@@ -60,7 +60,7 @@
     "autoload": {
         "psr-4": {
             "Arobases\\SyliusInstagramPlugin\\": "src/",
-            "Tests\\Arobases\\SyliusInstagramPlugin\\": "tests/Application/src/",
+            "Tests\\Arobases\\SyliusInstagramPlugin\\": "tests/Application/src/"
         }
     },
     "autoload-dev": {
