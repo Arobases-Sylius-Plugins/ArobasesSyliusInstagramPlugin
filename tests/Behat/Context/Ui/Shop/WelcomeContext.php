@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Behat\Arobases\SyliusInstagramPlugin\Behat\Context\Ui\Shop;
+namespace Tests\Arobases\SyliusInstagramPlugin\Behat\Context\Ui\Shop;
 
 
 use Behat\Behat\Context\Context;
-use Tests\Behat\Arobases\SyliusInstagramPlugin\Behat\Page\Shop\WelcomePageInterface;
+use Tests\Arobases\SyliusInstagramPlugin\Behat\Page\Shop\WelcomePageInterface;
 use Webmozart\Assert\Assert;
 
 final class WelcomeContext implements Context
