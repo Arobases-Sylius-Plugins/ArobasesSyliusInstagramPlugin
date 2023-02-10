@@ -61,7 +61,7 @@
         "psr-4": {
             "Arobases\\SyliusInstagramPlugin\\": "src/",
             "Tests\\Arobases\\SyliusInstagramPlugin\\": "tests/Application/src/",
-            "Tests\\Behat\\Arobases\\SyliusInstagramPlugin\\": "tests/Behat/src/"
+            "Tests\\Behat\\Arobases\\SyliusInstagramPlugin\\": "tests/Behat/"
         }
     },
     "autoload-dev": {
