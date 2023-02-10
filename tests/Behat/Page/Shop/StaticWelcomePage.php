@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Arobases\SyliusInstagramPlugin\Behat\Page\Shop;
+namespace Tests\Behat\Arobases\SyliusInstagramPlugin\Behat\Page\Shop;
 
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
