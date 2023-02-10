@@ -44,8 +44,12 @@
         "polishsymfonycommunity/symfony-mocker-container": "^1.0"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
+
     "extra": {
         "branch-alias": {
             "dev-master": "1.10-dev"
