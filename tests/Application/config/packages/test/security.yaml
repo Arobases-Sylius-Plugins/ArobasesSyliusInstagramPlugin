@@ -2,6 +2,3 @@ security:
     encoders:
         sha512: sha512
     firewalls:
-        main:
-            lazy: true
-            provider: users_in_memory
