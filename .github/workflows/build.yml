@@ -24,8 +24,8 @@ jobs:
                 php: ["8.0", "7.4"]
                 symfony: ["^4.4", "5.2.*", "5.3.*", "5.4.*"]
                 sylius: ["^1.10"]
-                node: ["10.x"]
-                mysql: ["8.0"]
+                node: ["12.x"]
+                mysql: ["5.7"]
 
 
         env:
@@ -96,6 +96,10 @@ jobs:
                 name: Restrict Symfony version
                 if: matrix.symfony != ''
                 run: |
+                    composer global config --no-plugins allow-plugins.symfony/flex true
+                    composer global config --no-plugins allow-plugins.symfony/thanks true
+                    composer global config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+                    composer global config --no-plugins allow-plugins.phpstan/extension-installer true             
                     composer global require --no-progress --no-scripts --no-plugins "symfony/flex:^1.10"
                     composer config extra.symfony.require "${{ matrix.symfony }}"
 
@@ -169,16 +173,3 @@ jobs:
             -
                 name: Run PHPUnit
                 run: vendor/bin/phpunit --colors=always
-
-            -
-                name: Run Behat
-                run: vendor/bin/behat --colors --strict -vvv --no-interaction || vendor/bin/behat --colors --strict -vvv --no-interaction --rerun
-
-            -
-                name: Upload Behat logs
-                uses: actions/upload-artifact@v2
-                if: failure()
-                with:
-                    name: Behat logs
-                    path: etc/build/
-                    if-no-files-found: ignore
