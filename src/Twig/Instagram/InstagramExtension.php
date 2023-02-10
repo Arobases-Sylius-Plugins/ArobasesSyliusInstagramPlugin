@@ -19,7 +19,8 @@ final class InstagramExtension extends AbstractExtension
         $this->channelContext = $channelContext;
     }
 
-    private function request($url){
+    private function request(string $url) : ?string
+    {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -27,7 +28,10 @@ final class InstagramExtension extends AbstractExtension
 
         $request = curl_exec($curl);
         curl_close($curl);
-        $request = json_decode($request, true);
+
+        if ($request) {
+            $request = json_decode((string)$request, true);
+        }
 
         return $request;
     }
