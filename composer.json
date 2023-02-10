@@ -49,7 +49,6 @@
             "symfony/flex": true
         }
     },
-
     "extra": {
         "branch-alias": {
             "dev-master": "1.10-dev"
