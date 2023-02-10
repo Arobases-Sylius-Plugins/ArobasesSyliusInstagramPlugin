@@ -31,14 +31,12 @@ final class InstagramExtension extends AbstractExtension
         curl_close($curl);
 
 
-        if (is_string($request)) {
+        if (!is_string($request)) {
+            return  [];
 
-            $response = json_decode($request, true);
-            if ($response === null) {
-                return  [];
-            }
         }
-        return  [];
+
+         return (array)json_decode($request, true);
 
     }
 
