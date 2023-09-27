@@ -8,8 +8,6 @@ namespace Arobases\SyliusInstagramPlugin\Model;
 
 interface ChannelInterface
 {
-    public function getInstagramToken(): ?string;
-    public function setInstagramToken(?string  $instagramToken): void;
     public function getAccessToken(): ?string;
     public function setAccessToken(?string $accessToken): void;
     public function getUserId(): ?string;
