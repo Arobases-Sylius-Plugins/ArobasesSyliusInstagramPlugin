@@ -1,3 +1,4 @@
+
 /*********INSTA list************/
 var swiper_insta = new Swiper('.swiper-insta', {
     nextButton: '.next-insta',
