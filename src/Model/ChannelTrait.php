@@ -8,7 +8,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 trait ChannelTrait
 {
-
     /**
      * @ORM\Column(name="instagram_token", type="string", nullable=true)
      */

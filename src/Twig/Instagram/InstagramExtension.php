@@ -28,7 +28,6 @@ final class InstagramExtension extends AbstractExtension
         $request = curl_exec($curl);
         curl_close($curl);
 
-
         if (!is_string($request)) {
             return  [];
 

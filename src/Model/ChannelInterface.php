@@ -18,4 +18,5 @@ interface ChannelInterface
     public function getFaceBookAppId(): ?string;
     public function getRedirectUrl(): ?string;
     public function setRedirectUrl(?string $redirectUrl): void;
+
 }
