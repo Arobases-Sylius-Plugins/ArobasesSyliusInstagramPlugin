@@ -1,15 +1,13 @@
 <?php
 
-// src/Model/ProductVariantInterface.php
-
 declare(strict_types=1);
 
 namespace Arobases\SyliusInstagramPlugin\Model;
 
 interface ChannelInterface
 {
-    public function getAccessToken(): ?string;
-    public function setAccessToken(?string $accessToken): void;
+    public function getInstagramToken(): ?string;
+    public function setInstagramToken(?string $instagramToken): void;
     public function getUserId(): ?string;
     public function setUserId(?string $userId): void;
     public function getUsername(): ?string;
@@ -20,4 +18,5 @@ interface ChannelInterface
     public function getFaceBookAppId(): ?string;
     public function getRedirectUrl(): ?string;
     public function setRedirectUrl(?string $redirectUrl): void;
+
 }

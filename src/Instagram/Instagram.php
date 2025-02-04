@@ -19,7 +19,7 @@ final class Instagram extends AbstractExtension
     {
         $this->channelContext = $channelContext;
 
-        $config = [// instantiation config params
+        $config = [
             'app_id' => $this->channelContext->getChannel()->getFaceBookAppId(),
             'app_secret' => $this->channelContext->getChannel()->getFaceBookAppSecret(),
         ];
