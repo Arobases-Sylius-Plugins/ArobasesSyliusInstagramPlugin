@@ -1,14 +1,38 @@
-<div class="ui three column doubling grid container">
-    {% for post in data %}
-        {% if post["media_url"] is defined %}
-            {% set media_url = post["media_url"] %}
-            <div class="column">
-                <div class="ui segment">
-                    <a class="ui medium image">
-                        <img alt="" src="{{ media_url }}">
-                    </a>
+<div class="bg-light py-md-5 py-3 mt-md-5 mt-3 mb-2">
+    <div class="max-container-2 px-xl-0 text-center ">
+        <div class="position-relative max-insta">
+            <div class="prev-top prev-insta"></div>
+            <div class="next-top next-insta"></div>
+            <div class="swiper-container swiper-insta pt-3">
+                <div class="swiper-wrapper">
+                    {% for key, post in data %}
+                        {% if data[key]["caption"] is defined %}
+                            {% set caption = data[key]["caption"] %}
+                        {% endif %}
+                        {% if data[key]["permalink"] is defined %}
+                            {% set permalink = data[key]["permalink"] %}
+                        {% endif %}
+                        {% if data[key]["timestamp"] is defined %}
+                            {% set timestamp = data[key]["timestamp"] %}
+                        {% endif %}
+                        {% if data[key]["username"] is defined %}
+                            {% set username = data[key]["username"] %}
+                        {% endif %}
+                        {% if data[key]["media_url"] is defined %}
+                            {% set media_url = data[key]["media_url"] %}
+                        {% endif %}
+                        <div class="swiper-slide swiper-insta-item">
+                            <a href="{{ permalink }}" target="_blank" rel="nofollow" title="" class="d-block position-relative">
+                                <img src="{{ media_url }}"  class="w-100">
+                                <span class="absolute-insta-content">
+                                    <span class="content-center-insta">{{ caption }}</span>
+                                </span>
+                            </a>
+                        </div>
+                    {% endfor %}
                 </div>
+                <div class="swiper-pagination swiper-pagination-insta"></div>
             </div>
-        {% endif %}
-    {% endfor %}
+        </div>
+    </div>
 </div>
