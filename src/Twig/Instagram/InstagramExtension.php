@@ -1,6 +1,5 @@
 <?php
 
-
 declare(strict_types=1);
 
 namespace Arobases\SyliusInstagramPlugin\Twig\Instagram;
@@ -9,7 +8,6 @@ use Arobases\SyliusInstagramPlugin\Model\ChannelInterface;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
-
 
 final class InstagramExtension extends AbstractExtension
 {
@@ -37,7 +35,6 @@ final class InstagramExtension extends AbstractExtension
         }
 
          return (array)json_decode($request, true);
-
     }
 
     public function getFunctions(): array
@@ -58,18 +55,14 @@ final class InstagramExtension extends AbstractExtension
             return [];
         }
 
-
         $url = "https://graph.instagram.com/me/media?fields=media_url,username,permalink,timestamp,caption&access_token=".$token;
         $response = $this->request($url);
 
 
         if (array_key_exists('data', $response)) {
-            return["data"];
+            return $response["data"];
         }
 
-
         return [];
-
     }
-
 }

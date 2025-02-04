@@ -10,9 +10,9 @@ trait ChannelTrait
 {
 
     /**
-     * @ORM\Column(name="acces_token", type="string", nullable=true)
+     * @ORM\Column(name="instagram_token", type="string", nullable=true)
      */
-    protected ?string $accessToken = null;
+    protected ?string $instagramToken = null;
 
     /**
      * @ORM\Column(name="user_id", type="string", nullable=true)
@@ -39,14 +39,14 @@ trait ChannelTrait
      */
     protected ?string $username = null;
 
-    public function getAccessToken(): ?string
+    public function getInstagramToken(): ?string
     {
-        return $this->accessToken;
+        return $this->instagramToken;
     }
 
-    public function setAccessToken(?string $accessToken): void
+    public function setInstagramToken(?string $instagramToken): void
     {
-        $this->accessToken = $accessToken;
+        $this->instagramToken = $instagramToken;
     }
 
     public function getUserId(): ?string
