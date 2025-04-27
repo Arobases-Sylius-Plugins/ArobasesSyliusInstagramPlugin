@@ -40,6 +40,17 @@ class Channel extends BaseChannel implements ChannelInterface
 }
 
 ```
+### Update config/packages/_sylius.yaml
+
+```yaml
+sylius_channel:
+    resources:
+        channel:
+            classes:
+                model: App\Entity\Channel\Channel
+                interface: Arobases\SyliusInstagramPlugin\Model\ChannelInterface
+```
+
 ### Update the schema
 
 ```bash
