@@ -1,13 +1,22 @@
 services:
-  _defaults:
-    autowire: true
-    autoconfigure: true
-    public: false
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
 
-  Arobases\SyliusInstagramPlugin\Twig\:
-    resource: '../../Twig'
+    Arobases\SyliusInstagramPlugin\Twig\:
+        resource: '../../Twig'
 
 
-  Arobases\SyliusInstagramPlugin\Form\Extension\ChannelTypeExtension:
-    tags:
-      - { name: form.type_extension, extended_type: Sylius\Bundle\ChannelBundle\Form\Type\ChannelType }
+    Arobases\SyliusInstagramPlugin\Form\Extension\ChannelTypeExtension:
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\ChannelBundle\Form\Type\ChannelType }
+
+    Arobases\SyliusInstagramPlugin\Repository\InstagramDataRepository:
+        factory: [ '@doctrine.orm.entity_manager', getRepository ]
+        arguments:
+            - Arobases\SyliusInstagramPlugin\Entity\InstagramData
+
+    Arobases\SyliusInstagramPlugin\Twig\Instagram\InstagramExtension:
+        arguments:
+            - '@Arobases\SyliusInstagramPlugin\Repository\InstagramDataRepository'

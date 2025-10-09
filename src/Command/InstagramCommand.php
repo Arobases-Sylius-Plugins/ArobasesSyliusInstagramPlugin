@@ -64,7 +64,7 @@ class InstagramCommand extends Command
                     $data = new InstagramData();
                     $data->setInstagramId($item['id']);
                     $data->setUsername($item['username']);
-                    $data->setCaption($item['caption']);
+                    $data->setCaption($this->stripEmojis($item['caption']));
                     $data->setPermalink($item['permalink']);
                     $data->setMediaUrl($item['media_url']);
                     $data->setTimestamp(new \DateTime($item['timestamp']));
@@ -107,5 +107,19 @@ class InstagramCommand extends Command
         }
 
         return (array)json_decode($request, true);
+    }
+
+    private function stripEmojis(string $text): string
+    {
+        // retire les caractères > U+FFFF (astral plane)
+        $text = preg_replace('/[\x{10000}-\x{10FFFF}]/u', '', $text);
+
+        // retire les variation selectors et le zero-width-joiner éventuels
+        $text = preg_replace('/[\x{FE00}-\x{FE0F}\x{200D}]/u', '', $text);
+
+        // nettoie espaces multiples et trim
+        $text = trim(preg_replace('/[ \t]{2,}/u', ' ', $text));
+
+        return $text;
     }
 }

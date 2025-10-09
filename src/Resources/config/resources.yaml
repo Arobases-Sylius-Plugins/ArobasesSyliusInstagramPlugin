@@ -1,0 +1,7 @@
+sylius_resource:
+    resources:
+        arobases_sylius_instagram.instagram_data:
+            driver: doctrine/orm
+            classes:
+                model: Arobases\SyliusInstagramPlugin\Entity\InstagramData
+                repository: Arobases\SyliusInstagramPlugin\Repository\InstagramDataRepository

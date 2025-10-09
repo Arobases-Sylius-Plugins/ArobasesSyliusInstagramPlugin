@@ -9,7 +9,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Sylius\Component\Resource\Model\ResourceInterface;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Arobases\SyliusInstagramPlugin\Repository\InstagramDataRepository")
  * @ORM\Table(name="arobases_instragram_data")
  */
 class InstagramData implements ResourceInterface
@@ -23,7 +23,7 @@ class InstagramData implements ResourceInterface
      */
     private ?int $id = null;
 
-    /** @ORM\Column(name="caption", type="string", length=255, nullable=true) */
+    /** @ORM\Column(name="caption", type="text", nullable=true, options={"collation"="utf8mb4_unicode_ci"}) */
     private ?string $caption;
 
     /** @ORM\Column(name="permalink", type="string", length=255, nullable=true) */
@@ -32,7 +32,7 @@ class InstagramData implements ResourceInterface
     /** @ORM\Column(name="username", type="string", length=255, nullable=true) */
     private ?string $username;
 
-    /** @ORM\Column(name="media_url", type="string", length=255, nullable=true) */
+    /** @ORM\Column(name="media_url", type="text", nullable=true) */
     private ?string $media_url;
 
     /** @ORM\Column(name="instagram_id", type="string", length=255, nullable=true) */
@@ -109,5 +109,4 @@ class InstagramData implements ResourceInterface
     {
         $this->timestamp = $timestamp;
     }
-
 }
