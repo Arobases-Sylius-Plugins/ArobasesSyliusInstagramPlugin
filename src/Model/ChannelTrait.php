@@ -38,6 +38,12 @@ trait ChannelTrait
      */
     protected ?string $username = null;
 
+    /**
+     * @ORM\Column(name="data_quantity", type="integer", nullable=true)
+     * Nombre de posts instagram à enregistrer
+     */
+    protected ?int $dataQuantity = null;
+
     public function getInstagramToken(): ?string
     {
         return $this->instagramToken;
@@ -96,6 +102,16 @@ trait ChannelTrait
     public function setRedirectUrl(?string $redirectUrl): void
     {
         $this->redirectUrl = $redirectUrl;
+    }
+
+    public function getDataQuantity(): ?int
+    {
+        return $this->dataQuantity;
+    }
+
+    public function setDataQuantity(?int $dataQuantity): void
+    {
+        $this->dataQuantity = $dataQuantity;
     }
 }
 
