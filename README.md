@@ -52,3 +52,14 @@ You can use it everywhere you want and render like you want
 ```bash
 {% include "@ArobasesSyliusInstagramPlugin/Instagram/_instagram.html.twig" with {'datas' : app_get_instagram_feed() } %}
 ```
+
+Import config
+```bash
+imports:
+    - { resource: "@ArobasesSyliusInstagramPlugin/Resources/config/resources.yaml" }
+```
+
+Use the command line to save Instagram data
+```bash
+php bin/console arobases:get-data
+```
