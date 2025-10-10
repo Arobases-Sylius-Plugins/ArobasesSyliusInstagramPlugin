@@ -19,4 +19,5 @@ services:
 
     Arobases\SyliusInstagramPlugin\Twig\Instagram\InstagramExtension:
         arguments:
+            - '@sylius.context.channel'
             - '@Arobases\SyliusInstagramPlugin\Repository\InstagramDataRepository'
