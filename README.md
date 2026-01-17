@@ -14,7 +14,7 @@
 ### Composer
 
 ```bash
-composer require arobases-sylius-public/sylius-instagram-plugin
+composer require arobases/sylius-instagram-plugin
  ```
 ### Use ChannelTrait and ChannelInterface:
 
