@@ -41,10 +41,12 @@ class InstagramCommand extends Command
             foreach ($response['data'] as $item) {
 
                 // on ne prend pas plus d'items que défini dans la channel
-                if ($channel->getDataQuantity()) {
-                    if ($row >= $channel->getDataQuantity()) {
-                        continue;
-                    }
+                if ($channel->getDataQuantity() && $row > $channel->getDataQuantity()) {
+                    break;
+                }
+
+                if (!isset($item['id'])) {
+                    continue;
                 }
 
                 // ne pas prendre le post si c'est une vidéo
@@ -53,14 +55,15 @@ class InstagramCommand extends Command
                 }
 
                 // enregistrer les données si elles ne sont pas encore présentes en BDD
+                // (la légende, et parfois d'autres champs, sont absents de la réponse quand ils sont vides)
                 if (null === $this->instagramDataRepository->findOneBy(['instagramId' => $item['id']])) {
                     $data = new InstagramData();
                     $data->setInstagramId($item['id']);
-                    $data->setUsername($item['username']);
-                    $data->setCaption($this->stripEmojis($item['caption']));
-                    $data->setPermalink($item['permalink']);
-                    $data->setMediaUrl($item['media_url']);
-                    $data->setTimestamp(new \DateTime($item['timestamp']));
+                    $data->setUsername($item['username'] ?? null);
+                    $data->setCaption(isset($item['caption']) ? $this->stripEmojis($item['caption']) : null);
+                    $data->setPermalink($item['permalink'] ?? null);
+                    $data->setMediaUrl($item['media_url'] ?? null);
+                    $data->setTimestamp(isset($item['timestamp']) ? new \DateTime($item['timestamp']) : null);
                     $this->entityManager->persist($data);
                     $this->entityManager->flush();
                 }
