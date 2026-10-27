@@ -8,28 +8,21 @@ use Arobases\SyliusInstagramPlugin\Model\ChannelInterface;
 use Arobases\SyliusInstagramPlugin\Repository\InstagramDataRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[AsCommand(name: 'arobases:get-data', description: 'save data from instagram')]
 class InstagramCommand extends Command
 {
-    protected static $defaultName = 'arobases:get-data';
-
     public function __construct(private ChannelContextInterface $channelContext, private InstagramDataRepository $instagramDataRepository, private EntityManagerInterface $entityManager)
     {
         parent::__construct();
     }
 
 
-    protected function configure(): void
-    {
-        $this
-            ->setDescription('save data from instagram')
-        ;
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var ChannelInterface $channel */
         $channel = $this->channelContext->getChannel();

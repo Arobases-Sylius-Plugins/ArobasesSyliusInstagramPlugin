@@ -9,12 +9,16 @@
 <p align="center">Provide Instagram Feed on Sylius.</p>
 
 
+## Requirements
+
+- Sylius 1.14, PHP 8.1+
+
 ## Installation
 
 ### Composer
 
 ```bash
-composer require arobases-sylius-public/sylius-instagram-plugin
+composer require arobases/sylius-instagram-plugin
  ```
 ### Use ChannelTrait and ChannelInterface:
 
