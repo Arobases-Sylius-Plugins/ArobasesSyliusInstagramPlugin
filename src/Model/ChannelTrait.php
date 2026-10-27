@@ -9,39 +9,48 @@ use Doctrine\ORM\Mapping as ORM;
 trait ChannelTrait
 {
     /**
+     * Annotations are kept for applications still mapping their entities with annotations.
+     *
      * @ORM\Column(name="instagram_token", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'instagram_token', type: 'string', nullable: true)]
     protected ?string $instagramToken = null;
 
     /**
      * @ORM\Column(name="user_id", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'user_id', type: 'string', nullable: true)]
     protected ?string $userId = null;
 
     /**
      * @ORM\Column(name="facebook_app_id", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'facebook_app_id', type: 'string', nullable: true)]
     protected ?string $faceBookAppId = null;
 
     /**
      * @ORM\Column(name="facebook_app_secret", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'facebook_app_secret', type: 'string', nullable: true)]
     protected ?string $faceBookAppSecret = null;
 
     /**
      * @ORM\Column(name="redirect_url", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'redirect_url', type: 'string', nullable: true)]
     protected ?string $redirectUrl = null;
 
     /**
      * @ORM\Column(name="username", type="string", nullable=true)
      */
+    #[ORM\Column(name: 'username', type: 'string', nullable: true)]
     protected ?string $username = null;
 
     /**
      * @ORM\Column(name="data_quantity", type="integer", nullable=true)
      * Nombre de posts instagram à enregistrer
      */
+    #[ORM\Column(name: 'data_quantity', type: 'integer', nullable: true)]
     protected ?int $dataQuantity = null;
 
     public function getInstagramToken(): ?string

@@ -4,41 +4,38 @@ declare(strict_types=1);
 
 namespace Arobases\SyliusInstagramPlugin\Entity;
 
+use Arobases\SyliusInstagramPlugin\Repository\InstagramDataRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
-use Sylius\Component\Resource\Model\ResourceInterface;
+use Sylius\Resource\Model\ResourceInterface;
 
-/**
- * @ORM\Entity(repositoryClass="Arobases\SyliusInstagramPlugin\Repository\InstagramDataRepository")
- * @ORM\Table(name="arobases_instragram_data")
- */
+#[ORM\Entity(repositoryClass: InstagramDataRepository::class)]
+#[ORM\Table(name: 'arobases_instragram_data')]
 class InstagramData implements ResourceInterface
 {
     use TimestampableEntity;
 
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
-    /** @ORM\Column(name="caption", type="text", nullable=true, options={"collation"="utf8mb4_unicode_ci"}) */
+    #[ORM\Column(name: 'caption', type: 'text', nullable: true, options: ['collation' => 'utf8mb4_unicode_ci'])]
     private ?string $caption;
 
-    /** @ORM\Column(name="permalink", type="string", length=255, nullable=true) */
+    #[ORM\Column(name: 'permalink', type: 'string', length: 255, nullable: true)]
     private ?string $permalink;
 
-    /** @ORM\Column(name="username", type="string", length=255, nullable=true) */
+    #[ORM\Column(name: 'username', type: 'string', length: 255, nullable: true)]
     private ?string $username;
 
-    /** @ORM\Column(name="media_url", type="text", nullable=true) */
+    #[ORM\Column(name: 'media_url', type: 'text', nullable: true)]
     private ?string $media_url;
 
-    /** @ORM\Column(name="instagram_id", type="string", length=255, nullable=true) */
+    #[ORM\Column(name: 'instagram_id', type: 'string', length: 255, nullable: true)]
     private ?string $instagramId;
 
-    /** @ORM\Column(name="timestamp", type="datetime", nullable=true) */
+    #[ORM\Column(name: 'timestamp', type: 'datetime', nullable: true)]
     private ?\DateTime $timestamp;
 
     public function __construct()

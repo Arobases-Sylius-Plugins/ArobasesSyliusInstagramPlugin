@@ -9,9 +9,8 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.1",
-        "jstolpe/instagram-graph-api-php-sdk": "^1.0",
-        "sylius/sylius": "^1.14"
+        "php": "^8.3",
+        "sylius/sylius": "^2.3"
     },
     "require-dev": {
         "behat/behat": "^3.6.1",
@@ -36,11 +35,11 @@
         "phpunit/phpunit": "^9.5",
         "sensiolabs/security-checker": "^6.0",
         "sylius-labs/coding-standard": "^4.0",
-        "symfony/browser-kit": "^5.4 || ^6.4",
-        "symfony/debug-bundle": "^5.4 || ^6.4",
-        "symfony/dotenv": "^5.4 || ^6.4",
-        "symfony/intl": "^5.4 || ^6.4",
-        "symfony/web-profiler-bundle": "^5.4 || ^6.4",
+        "symfony/browser-kit": "^6.4 || ^7.1",
+        "symfony/debug-bundle": "^6.4 || ^7.1",
+        "symfony/dotenv": "^6.4 || ^7.1",
+        "symfony/intl": "^6.4 || ^7.1",
+        "symfony/web-profiler-bundle": "^6.4 || ^7.1",
         "vimeo/psalm": "4.7.1",
         "polishsymfonycommunity/symfony-mocker-container": "^1.0"
     },
@@ -55,7 +54,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.14-dev"
+            "dev-master": "2.3-dev"
         }
     },
     "autoload": {
