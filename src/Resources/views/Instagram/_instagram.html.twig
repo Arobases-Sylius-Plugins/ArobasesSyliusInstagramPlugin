@@ -6,7 +6,7 @@
             <div class="swiper-container swiper-insta pt-3">
                 <div class="swiper-wrapper row pt-3">
                     {% for data in datas %}
-                        {% if data.permalink and data.caption and data.mediaUrl %}
+                        {% if data.permalink and data.mediaUrl %}
                             <div class="col-xl-3 col-lg-4 col-6 mb-3">
                                 <a href="{{ data.permalink }}" target="_blank" rel="nofollow" title="" class="d-block position-relative">
                                     <img src="{{ data.mediaUrl }}"  class="w-100">
