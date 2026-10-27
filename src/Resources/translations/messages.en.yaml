@@ -1,0 +1,5 @@
+arobases:
+  ui:
+    instagram_token: Instagram token
+    instagram_data_quantity: Number of Instagram posts
+    instagram_data_quantity_help: Number of posts saved by the arobases:get-data command. Leave empty to keep all the posts.

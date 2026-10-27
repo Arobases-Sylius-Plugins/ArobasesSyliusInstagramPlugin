@@ -73,7 +73,8 @@ Use the command line to save Instagram data
 php bin/console arobases:get-data
 ```
 
-The "Instagram Token" field is displayed in the "General" section of the channel form.
+The "Instagram token" and "Number of Instagram posts" fields are displayed in the "General" section of the channel form.
+The command keeps only the given number of most recent posts (all of them when the field is empty).
 
 ### Upgrade from 1.x (Sylius 1.14)
 
