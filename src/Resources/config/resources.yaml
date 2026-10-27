@@ -5,3 +5,6 @@ sylius_resource:
             classes:
                 model: Arobases\SyliusInstagramPlugin\Entity\InstagramData
                 repository: Arobases\SyliusInstagramPlugin\Repository\InstagramDataRepository
+
+imports:
+    - { resource: "@ArobasesSyliusInstagramPlugin/Resources/config/twig_hooks.yaml" }

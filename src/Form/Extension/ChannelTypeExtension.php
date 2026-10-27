@@ -15,11 +15,12 @@ final class ChannelTypeExtension extends AbstractTypeExtension
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->add('instagramToken', TextType::class, [
-            'label' => 'Instagram Token'
+            'label' => 'Instagram Token',
+            'required' => false,
         ]);
     }
 
-    public static function getExtendedTypes(): array
+    public static function getExtendedTypes(): iterable
     {
         return [ChannelType::class];
     }

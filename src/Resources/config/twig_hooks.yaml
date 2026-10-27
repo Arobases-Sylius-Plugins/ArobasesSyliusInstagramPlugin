@@ -1,0 +1,12 @@
+sylius_twig_hooks:
+    hooks:
+        # Instagram token field of the channel form
+        'sylius_admin.channel.create.content.form.sections.general':
+            instagram_token:
+                template: '@ArobasesSyliusInstagramPlugin/Admin/Channel/_instagram_token.html.twig'
+                priority: 50
+
+        'sylius_admin.channel.update.content.form.sections.general':
+            instagram_token:
+                template: '@ArobasesSyliusInstagramPlugin/Admin/Channel/_instagram_token.html.twig'
+                priority: 50
